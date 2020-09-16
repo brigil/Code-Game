@@ -16,10 +16,12 @@ body {
   header {
     text-align: center;
     padding: 20px;
-    padding-top: 30px;
+    padding-top: 20px;
     color: hsl(206, 17%, 28%);
   }
-
+  .btn{
+    margin: 20px;
+  }
   .board {
     
     text-align: center;
@@ -29,21 +31,18 @@ body {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
     color: hsl(206, 17%, 28%);
     font-size: 18px;
-    
+    margin-top: 80px;
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 20px;
   }
 
-.answerBtn {
-  display: grid;
- 
-}
 
-.hide {
-  display:none;
-}
+/*this hides all content */
 
-.remote {
-   padding: 20px;
-}
+
+
+
 
 .copyR {
   
@@ -58,12 +57,4 @@ body {
     padding: 10px 15px;
   }
 
- 
-}
-
-@media (max-width: 500px) {
-  .btn {
-    font-size: 0.8rem;
-  }
-}
 

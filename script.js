@@ -1,4 +1,60 @@
-var startBtn =document.getElementById("start")
+// hook elements for my buttons
+var questionDisplayEl = document.querySelector(".questionDisplay")
+var timerEl = document.querySelector(".timer")
+var resultsEl = document.querySelector(".results")
+
+
+// created dynamic elements for diplay questions and button
+var mainDisplay = document.createElement("h3")
+var startBtn =document.querySelector(".btn")
+
+
+// timer
+var timer = 90;
+// index that goes to next array
+var index = 0;
+
+
+//function that loads main page
+function openingPage() {
+  //opening page instructios
+    mainDisplay.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!"
+    //start btn text
+    startBtn.textContent = "Start The Game"
+    //appended heading and btn 
+    questionDisplayEl.append(mainDisplay, startBtn)
+  }
+// the beging of the quiz that start the timer
+function startQuiz() {
+
+}
+// function that controls the timer
+function timerDisplay() {
+
+}
+
+function nextQuestion() {
+
+}
+
+function checkAnswer(event) {
+
+}
+
+
+
+
+//add event listener for start button
+startBtn.addEventListener("click", startQuiz)
+//call function for opening page
+openingPage();
+
+
+
+
+// array of questions
+
+
 
 
 var questions = [
@@ -31,6 +87,3 @@ var questions = [
 },
 ];
 
-function beginGame(){
-  
-}
