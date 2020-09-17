@@ -20,7 +20,7 @@ var index = 0;
 //function that loads main page
 function openingPage() {
   //opening page instructios
-    mainDisplay.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!"
+    mainDisplay.textContent = "WELCOME PLAYER! Have a go at the following code-related questions. Be careful, you only have a 60 second time limit. All incorrect answers will penalize your score/time by ten seconds!"
     //start btn text
     startBtn.textContent = "Start The Game"
     //appended heading and btn 

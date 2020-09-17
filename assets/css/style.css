@@ -10,7 +10,7 @@ body {
   
 
   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif; 
-  background-image: url(../images/full-bloom.png)
+  background-image: url(../images/tree_bark.png)
 
   }
   header {
@@ -19,9 +19,8 @@ body {
     padding-top: 20px;
     color: hsl(206, 17%, 28%);
   }
-  .answer-button{
-    margin: 20px;
-    font-size: 20px;
+  .btn{
+    margin: 30px;
   }
   .board {
     
@@ -36,7 +35,6 @@ body {
     margin-left: 80px;
     margin-right: 80px;
     padding: 20px;
-    
   }
 
 
