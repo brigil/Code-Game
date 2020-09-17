@@ -2,6 +2,8 @@
 var questionDisplayEl = document.querySelector(".questionDisplay")
 var timerEl = document.querySelector(".timer")
 var resultsEl = document.querySelector(".results")
+var quizAnswers = document.querySelector(".answers");
+
 
 
 // created dynamic elements for diplay questions and button
@@ -29,6 +31,7 @@ function openingPage() {
 // the begining of the quiz and the timer
 function startQuiz() {
  timerDisplay()
+ nextQuestion()
 
 }
 // function that controls the timer
@@ -49,11 +52,47 @@ if ( timer <= 0){
 }
 // function that will display the next questions 
 function nextQuestion() {
+  var currentQuest = questions[index];
+  questionDisplayEl.textContent = " ";
+  mainDisplay.textContent = currentQuest.title;
+  questionDisplayEl.append(mainDisplay);
+  var choicesContainer = document.createElement("div");
+  for (let i = 0; i < currentQuest.choices.length; i++){
+    var choiceBtn = document.createElement("button");
+    choiceBtn.textContent = currentQuest.choices[i];
+    choiceBtn.addEventListener("click", checkAnswer);
+    choicesContainer.append(choiceBtn);
+
+  }
+  questionDisplayEl.append(choicesContainer);
 
 }
 
 function checkAnswer(event) {
+  
+  var responseText = event.target.textContent;
+  
 
+  if (responseText === questions[index].answer) {
+      quizAnswers.textContent = "Correct!";
+      
+      console.log("correct");
+      quizAnswers;
+  }
+  
+  else {
+    quizAnswers.textContent = "Incorrect!";
+      timer = (timer - 10);
+      
+      console.log("Incorrect");
+      quizAnswers;
+  }
+
+ 
+  index++;
+  nextQuestion();{
+    
+  }
 }
 
 
@@ -71,8 +110,11 @@ startBtn.addEventListener("click", startQuiz)
 //call function for opening page
 openingPage();
 
-
-
+//save users final results
+// display users final results
+// ask for users initals
+//save users initals in local storage
+//display scoreboard
 
 // array of questions
 
@@ -82,30 +124,31 @@ openingPage();
 var questions = [
   {
     title: "Commonly used data types DO NOT include:",
-    choices: ["1.Strings\n", "2.Booleans", "3.Alerts", "4.Numbers"],
-    answer: "Alerts"
+    choices: ["a.Strings\n", "b.Booleans", "c.Alerts", "d.Numbers"],
+    answer: "c"
   },
   {
     title: "The conditional in an if/else statement is enclosed in ________.:",
-    choices: ["1.Quotes", "2.Curly Braces", "3.Parentheses", "4.Square Brackets"],
-    answer: "Parentheses"
+    choices: ["a.Quotes", "b.Curly Braces", "c.Parentheses", "d.Square Brackets"],
+    answer: "c"
   },
  {
   title: "Arrays in javaScript can be used to store __________.:",   
-  choices: ["1.Numbers and strings", "2.Other arrays", "3.Booleans", "4.All of the above"], 
-  answer: "All of the above"
+  choices: ["a.Numbers and strings", "b.Other arrays", "c.Booleans", "d.All of the above"], 
+  answer: "d"
 
 },
 {
   title: "Sting values must be enclosed within:",
-  choices: ["1.Commas", "2.Curly braces", "3.Quotes", "4.Parentheses"],  
-  answer: "Quotes"  
+  choices: ["a.Commas", "b.Curly braces", "c.Quotes", "d.Parentheses"],  
+  answer: "c"  
 },
 
 {
   title: "A very useful tool used during development and debugging for printing content to the debugger is:",   
-  choices: ["1.JavaScript", "2.Terminal/bash", "3.For loops", "4.Console.log"],
-  answer: "Console.log"
-},
+  choices: ["a.JavaScript", "b.Terminal/bash", "c.For loops", "d.Console.log"],
+  answer: "d"
+}
+
 ];
 
