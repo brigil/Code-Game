@@ -10,7 +10,7 @@ var startBtn =document.querySelector(".btn")
 
 
 // timer
-var timer = 90;
+var timer = 60;
 // index that goes to next array
 var index = 0;
 
@@ -24,15 +24,30 @@ function openingPage() {
     //appended heading and btn 
     questionDisplayEl.append(mainDisplay, startBtn)
   }
-// the beging of the quiz that start the timer
+
+
+// the begining of the quiz and the timer
 function startQuiz() {
+ timerDisplay()
 
 }
 // function that controls the timer
 function timerDisplay() {
 
+  timerEl.textContent = timer;
+
+  var questionTimer = setInterval(function(){
+
+timer--
+
+timerEl.textContent = timer;
+if ( timer <= 0){
+  clearInterval(questionTimer);
 }
 
+  },1 * 1000)
+}
+// function that will display the next questions 
 function nextQuestion() {
 
 }
@@ -42,9 +57,16 @@ function checkAnswer(event) {
 }
 
 
+function showTimer() {
+  // display timer to screen
+  timerEl.textContent = timer;
+  //create setInterval and store it to a var
+  
 
 
-//add event listener for start button
+}
+
+//add event listener that starts button
 startBtn.addEventListener("click", startQuiz)
 //call function for opening page
 openingPage();
